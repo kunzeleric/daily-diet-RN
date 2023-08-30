@@ -1,19 +1,28 @@
 import { useState } from "react";
+import { useNavigation } from "@react-navigation/native";
+import { DietHighlight } from "@components/DietHighlight";
 import {
   Container,
-  GreenIcon,
+  Icon,
   Header,
-  RedIcon,
 } from "./styles";
-import { DietHighlight } from "@components/DietHighlight";
+
 
 export const DietStatus = () => {
-  const [dietStatus, setDietStatus] = useState(0.9375);
+  const [dietStatus, setDietStatus] = useState(0.5375);
+  const navigation = useNavigation();
+
+  const handleOpenStatus = (dietStatus: number) => {
+    navigation.navigate('statistics', { dietStatus });
+  }
 
   return (
-    <Container type={dietStatus > 0.6 ? "SUCCESS" : "FAILURE"}>
+    <Container 
+      type={dietStatus > 0.6 ? "SUCCESS" : "FAILURE"}
+      onPress={() => handleOpenStatus(dietStatus)}
+    >
       <Header>
-        {dietStatus > 0.6 ? <GreenIcon /> : <RedIcon />}
+        <Icon type={dietStatus > 0.6 ? "SUCCESS" : "FAILURE"}/>
       </Header>
       <DietHighlight dietPercentage={dietStatus} />
     </Container>

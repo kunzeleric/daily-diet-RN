@@ -26,18 +26,10 @@ export const Header = styled.View`
   align-items: flex-end;
 `;
 
-export const GreenIcon = styled(ArrowUpRight).attrs(({ theme }) => ({
-  size: 24,
-  color: theme.COLORS.green_dark,
-  weight: 'bold'
-}))`
-  padding-right: 13px;
-`;
-
-export const RedIcon = styled(ArrowUpRight).attrs(({ theme }) => ({
-  size: 24,
-  color: theme.COLORS.red_dark,
-  weight: 'bold'
+export const Icon = styled(ArrowUpRight).attrs<Props>(({ theme, type }) => ({
+  size: 26,
+  color: type === "SUCCESS" ? theme.COLORS.green_dark : theme.COLORS.red_dark,
+  weight: "bold",
 }))`
   padding-right: 13px;
 `;

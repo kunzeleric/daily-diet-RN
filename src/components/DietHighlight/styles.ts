@@ -9,7 +9,7 @@ export const DietInformationContainer = styled.View`
 
 export const DietIndicator = styled.Text`
   ${({ theme }) => css`
-    font-size: ${theme.FONT_SIZE.XL}px;
+    font-size: ${theme.FONT_SIZE.XXL}px;
     color: ${theme.COLORS.gray_100};
     font-family: ${theme.FONT_FAMILY.BOLD};
   `}

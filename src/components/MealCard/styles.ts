@@ -18,6 +18,7 @@ export const Container = styled(TouchableOpacity)`
   border: 1px solid ${({ theme }) => theme.COLORS.gray_400};
   border-radius: 6px;
   padding: 12px;
+  margin-bottom: 8px;
 `;
 
 export const DateAndNameContainer = styled.View`

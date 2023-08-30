@@ -1,11 +1,14 @@
 import React, { useState } from "react";
-import { View, SectionList, Text } from "react-native";
+import { View, SectionList } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import { Header } from "@components/Header";
 import { DietStatus } from "@components/DietStatus";
 import { ButtonIcon } from "@components/ButtonIcon";
-import { Container, HeaderSectionList, MealTitle } from "./styles";
-import uuid from "react-native-uuid";
 import { MealCard } from "@components/MealCard";
+import uuid from "react-native-uuid";
+import { Container, HeaderSectionList, MealTitle } from "./styles";
+
+
 
 export type MealProps = {
   id: string;
@@ -22,9 +25,10 @@ export type DietArrayProps = {
 };
 
 export const Home = () => {
+  const navigation = useNavigation();
   const [mealList, setMealList] = useState<DietArrayProps[]>([
     {
-      title: "2023-08-28",
+      title: "28.08.2023",
       data: [
         {
           id: uuid.v4() as string,
@@ -34,10 +38,18 @@ export const Home = () => {
           time: "16:00",
           isInDiet: false,
         },
+        {
+          id: uuid.v4() as string,
+          name: "Hamburguer",
+          description: "Hamburguer com bacon e queijo.",
+          date: "2023-08-28",
+          time: "16:00",
+          isInDiet: false,
+        }
       ],
     },
     {
-      title: "2023-08-28",
+      title: "28.08.2023",
       data: [
         {
           id: uuid.v4() as string,
