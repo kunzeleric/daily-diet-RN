@@ -63,13 +63,17 @@ export const Home = () => {
     }
   ]);
 
+  const handleCreateMeal = () => {
+    navigation.navigate("createMeal")
+  }
+
   return (
     <Container>
       <Header />
       <DietStatus />
       <View>
         <MealTitle>Refeições</MealTitle>
-        <ButtonIcon title="Nova Refeição" icon="add" />
+        <ButtonIcon title="Nova Refeição" icon="add" onPress={() => handleCreateMeal()}/>
       </View>
       <SectionList
         sections={mealList}

@@ -8,7 +8,6 @@ type Props = {
 };
 
 export const Container = styled.View`
-  background-color: ${({ theme }) => theme.COLORS.gray_700};
   justify-content: center;
 `;
 
@@ -41,7 +40,7 @@ export const Content = styled.View`
 export const BigIndicator = styled.View`
   justify-content: center;
   align-items: center;
-  background-color: ${({ theme }) => theme.COLORS.gray_600};
+  background-color: ${({ theme }) => theme.COLORS.gray_500};
   border-radius: 8px;
   margin-bottom: 8px;
   min-height: 90px;

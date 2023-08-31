@@ -5,6 +5,7 @@ export declare global {
       statistics: {
         dietStatus: number;
       };
+      createMeal: undefined;
     }
   }
 }
