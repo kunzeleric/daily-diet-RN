@@ -1,22 +1,31 @@
+import { useNavigation } from "@react-navigation/native";
+import { useState } from "react";
+import { RadioButton } from "@components/RadioButton";
+import { Button } from "@components/Button";
 import { Input } from "@components/Input";
 import {
   BackIcon,
   BackButton,
   Container,
   Header,
-  InputFields,
   Title,
   DateTimeFields,
+  RadioTitle,
+  InputFields,
+  ButtonField,
 } from "./styles";
-import { useNavigation } from "@react-navigation/native";
-import React from "react";
 
 export const CreateMeal = () => {
+  const [isDiet, setIsDiet] = useState<boolean>(true);
   const navigation = useNavigation();
 
   const handleGoBack = () => {
     navigation.goBack();
   };
+
+  const handleSubmit = () => {
+    navigation.navigate('completed', { isDiet });
+  }
 
   return (
     <Container>
@@ -28,17 +37,26 @@ export const CreateMeal = () => {
       </Header>
       <InputFields>
         <Input label="Nome" />
-        <Input 
-          label="Descrição" 
-          multiline numberOfLines={6} 
+        <Input
+          label="Descrição"
+          multiline
+          numberOfLines={6}
           textAlignVertical="top"
-          style={{ paddingTop: 5}}
+          style={{ paddingTop: 5 }}
         />
         <DateTimeFields>
-          <Input label="Data" />
-          <Input label="Hora" />
+          <Input label="Data" placeholder="dd/mm/yyyy" />
+          <Input label="Hora" placeholder="hh:mm" />
         </DateTimeFields>
       </InputFields>
+
+      <InputFields>
+        <RadioTitle>Está dentro da dieta?</RadioTitle>
+        <RadioButton isDiet={isDiet} setIsDiet={setIsDiet} />
+      </InputFields>
+      <ButtonField>
+        <Button title="Cadastrar Refeição" type="CONFIRM" onPress={handleSubmit}/>
+      </ButtonField>
     </Container>
   );
 };

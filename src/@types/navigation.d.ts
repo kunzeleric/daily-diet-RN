@@ -6,6 +6,9 @@ export declare global {
         dietStatus: number;
       };
       createMeal: undefined;
+      completed: {
+        isDiet: boolean;
+      };
     }
   }
 }

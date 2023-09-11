@@ -8,8 +8,6 @@ import { MealCard } from "@components/MealCard";
 import uuid from "react-native-uuid";
 import { Container, HeaderSectionList, MealTitle } from "./styles";
 
-
-
 export type MealProps = {
   id: string;
   name: string;
@@ -45,7 +43,7 @@ export const Home = () => {
           date: "2023-08-28",
           time: "16:00",
           isInDiet: false,
-        }
+        },
       ],
     },
     {
@@ -60,12 +58,12 @@ export const Home = () => {
           isInDiet: false,
         },
       ],
-    }
+    },
   ]);
 
   const handleCreateMeal = () => {
-    navigation.navigate("createMeal")
-  }
+    navigation.navigate("createMeal");
+  };
 
   return (
     <Container>
@@ -73,7 +71,11 @@ export const Home = () => {
       <DietStatus />
       <View>
         <MealTitle>Refeições</MealTitle>
-        <ButtonIcon title="Nova Refeição" icon="add" onPress={() => handleCreateMeal()}/>
+        <ButtonIcon
+          title="Nova Refeição"
+          icon="add"
+          onPress={() => handleCreateMeal()}
+        />
       </View>
       <SectionList
         sections={mealList}
