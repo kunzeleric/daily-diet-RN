@@ -9,6 +9,7 @@ export declare global {
       completed: {
         isDiet: boolean;
       };
+      mealDetail: undefined;
     }
   }
 }

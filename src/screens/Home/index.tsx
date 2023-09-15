@@ -46,19 +46,6 @@ export const Home = () => {
         },
       ],
     },
-    {
-      title: "28.08.2023",
-      data: [
-        {
-          id: uuid.v4() as string,
-          name: "Hamburguer",
-          description: "Hamburguer com bacon e queijo.",
-          date: "2023-08-28",
-          time: "16:00",
-          isInDiet: false,
-        },
-      ],
-    },
   ]);
 
   const handleCreateMeal = () => {

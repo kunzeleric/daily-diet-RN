@@ -19,6 +19,7 @@ export const Container = styled(TouchableOpacity)<Props>`
 
   ${({ theme, type }) => css`
     background-color: ${type === "CONFIRM" ? theme.COLORS.gray_200 : theme.COLORS.white};
+    border: ${type === 'CANCEL' ? `1px solid ${theme.COLORS.gray_100}` : "none"};
   `}
 `;
 

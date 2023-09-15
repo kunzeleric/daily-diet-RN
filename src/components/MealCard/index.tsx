@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import {
   Container,
   Time,
@@ -14,9 +15,14 @@ type Props = TouchableOpacityProps & {
   type?: IconStyleProps;
 };
 
-export const MealCard = ({ title, time, type,  ...rest }: Props) => {
+export const MealCard = ({ title, time, type, ...rest }: Props) => {
+  const navigation = useNavigation();
+
+  const handleMealDetail = () => {
+    navigation.navigate("mealDetail");
+  };
   return (
-    <Container {...rest}>
+    <Container {...rest} onPress={() => handleMealDetail()}>
       <DateAndNameContainer>
         <Time>{time}</Time>
         <Name>{title}</Name>

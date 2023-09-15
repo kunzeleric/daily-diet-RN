@@ -14,11 +14,13 @@ export const Container = styled(TouchableOpacity)<Props>`
   align-items: center;
   flex-direction: row;
   border-radius: 6px;
+  padding: 0 15px 0 15px;
 
   ${({ theme, type }) => css`
     background-color: ${type === "ADD"
       ? theme.COLORS.gray_200
       : theme.COLORS.white};
+    border: ${type === 'DELETE' ? `1px solid ${theme.COLORS.gray_100}` : "none"};
   `}
 `;
 
